@@ -9,5 +9,5 @@ class Director (db.Model):
 
 
 class DirectorSchema(Schema):
-    id = fields. Integer()
-    name = fields. String()
+    id = fields.Integer()
+    name = fields.String()
