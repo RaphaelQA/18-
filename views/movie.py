@@ -6,7 +6,7 @@ from implemented import movie_service, movie_schema, movies_schema
 movies_ns = Namespace('movies')
 
 @movies_ns.route('/')
-class Moviesview(Resource):
+class MoviesView(Resource):
 
     def get(self):
         data = {
@@ -25,7 +25,7 @@ class Moviesview(Resource):
 
         return '', 201, {'location': f'/movies/{new_movie.id}'}
 
-@movies_ns.route('/')
+@movies_ns.route('/<int:mid>')
 class Movieview(Resource):
     def get(self, mid):
         movie = movie_service.get_one(mid)
